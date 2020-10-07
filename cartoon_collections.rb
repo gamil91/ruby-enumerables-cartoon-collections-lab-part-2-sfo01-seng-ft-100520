@@ -1,26 +1,25 @@
-def square_array(array)
-  array.map do |element|
-    element * element 
+def square_array (array)
+  array.map do |number|
+  number * number
   end
 end
 
-def summon_captain_planet(planeteer_calls)
-  planeteer_calls.collect do |element|
-     element.capitalize + "!"
+def summon_captain_planet (array)
+  array.map do |string|
+  string.capitalize + "!"
   end
 end
 
-def long_planeteer_calls(planeteer_calls)
-  planeteer_calls.any? do |string|
-  string.length > 4
-  end 
+def long_planeteer_calls (array)
+  array.any? {|element| element.length > 4}
 end
 
-def find_valid_calls(planeteer_calls)
+def find_valid_calls (array)
   valid_calls = ["Earth!", "Wind!", "Fire!", "Water!", "Heart!"]
-  planeteer_calls.find do |element| 
-    valid_calls.find do |calls|
-      element == calls
-    end 
-  end
+    array.find do |string| 
+       valid_calls.include? string 
+    end
 end
+
+
+
